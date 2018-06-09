@@ -1,0 +1,24 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title>Feed</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card *ngFor="let feed of feeds">
+    <ion-card-header>
+      {{feed.user_name}}
+    </ion-card-header>
+    <ion-card-content>
+      {{feed.user_message}}
+    </ion-card-content>
+  </ion-card>
+
+  <p text-center *ngIf="feeds?.length == 0">Nenhuma Postagem</p>
+</ion-content>
